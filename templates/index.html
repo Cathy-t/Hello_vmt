@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<!--    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102190693-1"></script>-->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-102190693-1');
+    </script>
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Video-guided Machine Translation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../static/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/new-age.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#retrieval">Video-guided Machine Translation</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#features1">VRET 模型</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#features2">DEAR 模型</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#container">chen.shiyu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead" id="features1">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-6 my-auto">
+                    <div class="header-content mx-auto" id="content">
+                        <h2 class="mb-5">--基于视觉关系增强--</h2>
+                        <form method=post enctype=multipart/form-data>
+                            <input type=file class="btn btn-outline btn-xl" name=content-file style="width: 50%; margin-right: 2%">
+                            <input type="submit" name="submit" value="upload_video" class="btn btn-outline btn-xl">
+                        </form>
+                        <p></p>
+                        <h3 style="margin-bottom: 2%">Source language sentence</h3>
+                        <form method=post enctype=multipart/form-data>
+                            <input type="text" name="src" value="a man is cutting a piece of paper" style="width: 70%; margin-right: 2%" id="vret_src">
+                            <input type="submit" name="submit" value="vret" class="btn btn-outline btn-xl" data-loading-text="Loading..." onclick="loading_vret();">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 my-auto">
+                    <img  id="image_VRET" src="../static/img/VRET_example.jpg" style="max-width: 130%;">
+                    <video  id="change_video_VRET" src={{video}} controls="controls" style="display: none" autoplay="autoplay"></video>
+                </div>
+                <div id="loading_vret" style="text-align: center">
+                    <h6>由于算力，可能要等几秒 ~~~ ^ ^ </h6>
+                    <div id="loading-gif_vret"></div>
+                    <p>Loading...</p>
+                </div>
+                <h3 style="padding-right: 3%; display:none" id="vret_tgt_alert">Target language sentence:</h3>
+                <h3 style="display:none" id="vret_tgt"></h3>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" style="padding-top: 5%">
+        <div class="container">
+            <div class="section-heading text-center" style="margin-bottom: 3%">
+                <p class="text-muted" style="padding-bottom: 3%">VRET 模 型 基 于 以 下 文 章 实 现</p>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 my-auto">
+                    <img src="../static/img/VRET_framework.png" style="max-width: 100%;">
+                </div>
+                <div class="col-lg-5 my-auto">
+                    <div class="container-fluid">
+                        <a target=_blank href="https://ins2021.wixsite.com/vret">
+                            <h3>Vision Talks: Visual Relationship-Enhanced Transformer for Video-Guided Machine Translation</h3>
+                            <p class="text-muted">Shiyu Chen, Yawen Zeng, Da Cao, Shaofei Lu</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <header class="masthead" id="features2">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-6 my-auto">
+                    <div class="header-content mx-auto" id="content2">
+                        <h2 class="mb-5">--基于双回译增强--</h2>
+                        <h3>Upload Video</h3>
+                        <form method=post enctype=multipart/form-data>
+                                <input type=file class="btn btn-outline btn-xl" name=content-file style="width: 50%; margin-right: 2%">
+                                <input type="submit" name="submit" value="upload_video" class="btn btn-outline btn-xl">
+                            <p></p>
+                        </form>
+                        <form method=post enctype=multipart/form-data>
+                            <h3 style="margin-bottom: 2%">Source language sentence</h3>
+                            <input type="text" name="src" value="a man is cutting a piece of paper" style="width: 70%; margin-right: 2%" id="dear_src">
+                            <input type="submit" name="submit" value="dear" class="btn btn-outline btn-xl" data-loading-text="Loading..." onclick="loading();">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 my-auto">
+                    <img id="image_DEAR" src="../static/img/DEAR_example.png" style="max-width: 130%;">
+                    <video  id="change_video_DEAR" src={{video}} controls="controls" style="display: none" autoplay="autoplay"></video>
+                </div>
+                    <div id="loading" style="text-align: center">
+                        <h6>由于算力，可能要等几秒 ~~~ ^ ^ </h6>
+                        <div id="loading-gif"></div>
+                        <p>Loading...</p>
+                    </div>
+                    <h3 style="padding-right: 3%; display:none" id="dear_tgt_alert">Target language sentence:</h3>
+                    <h3 style="display:none" id="dear_tgt"></h3>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-heading text-center" style="margin-bottom: 2%">
+                <p class="text-muted" style="padding-bottom: 3%">DEAR 模 型 基 于 以 下 文 章 实 现</p>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 my-auto">
+                    <img src="../static/img/DEAR_framework.png" style="max-width: 100%;">
+                </div>
+                <div class="col-lg-6 my-auto">
+                    <div class="container-fluid">
+                        <a target=_blank href="https://emnlp-2021.wixsite.com/dear">
+                            <h3>Video-guided Machine Translation via Dual-level Back-translation</h3>
+                            <p class="text-muted">Shiyu Chen, Yawen Zeng, Da Cao, Shaofei Lu</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container " id="container">
+            <p>&copy; Shiyu Chen 2022. For Diploma Project.</p>
+        </div>
+    </footer>
+
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="../static/vendor/jquery/jquery.min.js "></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js "></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../static/vendor/jquery-easing/jquery.easing.min.js "></script>
+    
+    <!-- Custom scripts for this template -->
+    <script src="../static/js/new-age.min.js "></script>
+
+<!--    self style-->
+    <script type="text/javascript">
+        // alert(1)
+        var video_data = "{{video}}";
+        if (video_data) {
+            // alert(video_data);
+            document.getElementById('image_DEAR').style.display="none";
+            document.getElementById('image_VRET').style.display="none";
+            document.getElementById('change_video_DEAR').style.display="block";
+            document.getElementById('change_video_DEAR').style.height="30%";
+            document.getElementById('change_video_DEAR').style.width="130%";
+            document.getElementById('change_video_VRET').style.display="block";
+            document.getElementById('change_video_VRET').style.height="30%";
+            document.getElementById('change_video_VRET').style.width="130%";
+        }
+
+        var dear_tgt = "{{dear_tgt}}";
+        if (dear_tgt) {
+            // alert(dear_tgt);
+            var dear_src = "{{dear_src}}"
+            // alert(dear_src);
+            document.getElementById('dear_tgt_alert').style.display="block";
+            document.getElementById('dear_tgt').innerText = dear_tgt;
+            document.getElementById('dear_tgt').style.display="block";
+            document.getElementById('dear_src').value = dear_src;
+            document.getElementById('image_DEAR').style.display="none";
+            document.getElementById('image_VRET').style.display="none";
+            document.getElementById('change_video_DEAR').style.display="block";
+            document.getElementById('change_video_DEAR').style.height="30%";
+            document.getElementById('change_video_DEAR').style.width="130%";
+            document.getElementById('change_video_VRET').style.display="block";
+            document.getElementById('change_video_VRET').style.height="30%";
+            document.getElementById('change_video_VRET').style.width="130%";
+        }
+
+        var vret_tgt = "{{vret_tgt}}";
+        if (vret_tgt) {
+            // alert(vret_tgt);
+            var vret_src = "{{vret_src}}"
+            // alert(vret_src);
+            document.getElementById('vret_tgt_alert').style.display="block";
+            document.getElementById('vret_tgt').innerText = vret_tgt;
+            document.getElementById('vret_tgt').style.display="block";
+            document.getElementById('vret_src').value = vret_src;
+            document.getElementById('image_DEAR').style.display="none";
+            document.getElementById('image_VRET').style.display="none";
+            document.getElementById('change_video_DEAR').style.display="block";
+            document.getElementById('change_video_DEAR').style.height="30%";
+            document.getElementById('change_video_DEAR').style.width="130%";
+            document.getElementById('change_video_VRET').style.display="block";
+            document.getElementById('change_video_VRET').style.height="30%";
+            document.getElementById('change_video_VRET').style.width="130%";
+        }
+
+    </script>
+
+    <script type="text/javascript">// <![CDATA[
+        // document.getElementById('dear_tgt').style.display="none";
+        // document.getElementById('dear_tgt_alert').style.display="none";
+        function loading() {
+            $("#loading").show();
+            $("#loading-gif").show();
+            // $("#content").hide();
+        }
+        function loading_vret() {
+            $("#loading_vret").show();
+            $("#loading-gif_vret").show();
+            // $("#content").hide();
+        }
+    // ]]></script>
+    
+</body>
+
+
+</html>
