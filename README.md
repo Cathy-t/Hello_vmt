@@ -1,7 +1,7 @@
 # Hello_vmt
 Video-guided machine translation display platform
 
-And you can download the model from https://drive.google.com/xxx
+And you can download the model from https://drive.google.com/drive/folders/13XgukW41ryW3lVuN_yQEuuqe9nUuXSqX?usp=sharing
 
 run main.py and you can see the project like the one shown below .
 
