@@ -15,7 +15,7 @@ run main.py and you can see the project like the one shown below .
 - https://d.wanfangdata.com.cn/patent/CN202110704424.6
 - https://d.wanfangdata.com.cn/patent/CN202110395391.1
 
-This is the PyTorch implementation of the paper: 
+The implementation of the DEAR model is in the paper: 
 <font color=blue>Video-guided machine translation via dual-level back-translation. Shiyu Chen ,Yawen Zeng ,Da Cao and Shaofei Lu. Knowledge-Based Systems 2022.</font>
 
 ```
