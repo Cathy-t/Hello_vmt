@@ -1,10 +1,10 @@
 # Hello_vmt
 Video-guided machine translation display platform
 
-## Download
+## Download the data
 You can download the model and the feature of [MSVD-Turkish Dataset](https://hucvl.github.io/MSVD-Turkish/) from [here](https://drive.google.com/drive/folders/13XgukW41ryW3lVuN_yQEuuqe9nUuXSqX?usp=sharing). And the model was trained on [VATEX Dataset](https://eric-xw.github.io/vatex-website/download.html).  
 
-## Run
+## How to run the platform
 * Download the processed video features in the [previous section](https://github.com/Cathy-t/Hello_vmt/edit/main/README.md#download), or process the original video according to the corresponding paper.
 * Modify 'TRAIN_VOCAB_EN'/'TRAIN_VOCAB_ZH'/'CHK_DIR'/'DATA_DIR' in the configuration file. 
 
