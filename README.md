@@ -1,9 +1,18 @@
 # Hello_vmt
 Video-guided machine translation display platform
 
-And you can download the model from https://drive.google.com/drive/folders/13XgukW41ryW3lVuN_yQEuuqe9nUuXSqX?usp=sharing
+## Download
+You can download the model and the feature of [MSVD-Turkish Dataset](https://hucvl.github.io/MSVD-Turkish/) from [here](https://drive.google.com/drive/folders/13XgukW41ryW3lVuN_yQEuuqe9nUuXSqX?usp=sharing). And the model was trained on [VATEX Dataset](https://eric-xw.github.io/vatex-website/download.html).  
 
-run main.py and you can see the project like the one shown below .
+## Run
+* Download the processed video features in the [previous section](https://github.com/Cathy-t/Hello_vmt/edit/main/README.md#download), or process the original video according to the corresponding paper.
+* Modify 'TRAIN_VOCAB_EN'/'TRAIN_VOCAB_ZH'/'CHK_DIR'/'DATA_DIR' in the configuration file. 
+
+>>>[configs_vret.yaml](https://github.com/Cathy-t/Hello_vmt/blob/main/src/configs_vret.yaml)  | VRET
+
+>>>[configs_dear.yaml](https://github.com/Cathy-t/Hello_vmt/blob/main/src/configs_dear.yaml)  | DEAR
+
+* run main.py and you can see the project like the one shown below .
 
 <img src="https://github.com/Cathy-t/Hello_vmt/blob/main/vmt.gif" alt="show" />
 
@@ -16,7 +25,7 @@ run main.py and you can see the project like the one shown below .
 - https://d.wanfangdata.com.cn/patent/CN202110395391.1
 
 The implementation of the DEAR model is in the paper: 
-<font color=blue>Video-guided machine translation via dual-level back-translation. Shiyu Chen ,Yawen Zeng ,Da Cao and Shaofei Lu. Knowledge-Based Systems 2022.</font>
+[Video-guided machine translation via dual-level back-translation. Shiyu Chen ,Yawen Zeng ,Da Cao and Shaofei Lu. Knowledge-Based Systems 2022.](https://authors.elsevier.com/c/1eq-j3OAb95KRy)
 
 ```
 @article{CHEN2022108598,
