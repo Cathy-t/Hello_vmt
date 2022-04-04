@@ -41,3 +41,6 @@ author = {Shiyu Chen and Yawen Zeng and Da Cao and Shaofei Lu},
 keywords = {Multiple modalities, Video-guided machine transaltion, Back-translation, Shared transformer},
 abstract = {Video-guided machine translation aims to translate a source language description into a target language using the video information as additional spatio-temporal context. Existing methods focus on making full use of videos as auxiliary material, while ignoring the semantic consistency and reducibility between the source language and the target language. In addition, the visual concept is helpful for improving the alignment and translation of different languages but is rarely considered. Toward this end, we contribute a novel solution to thoroughly investigate the video-guided machine translation issue via dual-level back-translation. Specifically, we first exploit a sentence-level back-translation to obtain the coarse-grained semantics. Thereafter, a video concept-level back-translation module is proposed to explore the fine-grained semantic consistency and reducibility. Lastly, a multi-pattern joint learning approach is utilized to boost the translation performance. By experimenting on two real-world datasets, we demonstrate the effectiveness and rationality of our proposed solution.}
 }
+```
+
+>The paper of the VRET model is under review.
