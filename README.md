@@ -44,3 +44,5 @@ abstract = {Video-guided machine translation aims to translate a source language
 ```
 
 >The paper of the VRET model is under review.
+
+>研究生的主要研究成果都在这儿了，毕业快乐！不过该展示平台还是会慢慢更新的~
