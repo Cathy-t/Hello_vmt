@@ -44,5 +44,21 @@ abstract = {Video-guided machine translation aims to translate a source language
 ```
 
 >The paper of the VRET model is In Press, Journal Pre-proof.
+>[Vision talks: Visual relationship-enhanced transformer for video-guided machine translation. Shiyu Chen ,Yawen Zeng ,Da Cao and Shaofei Lu. Expert Systems with Applications 2022.](https://doi.org/10.1016/j.eswa.2022.118264)
+```
+@article{CHEN2022118264,
+title = {Vision talks: Visual relationship-enhanced transformer for video-guided machine translation},
+journal = {Expert Systems with Applications},
+pages = {118264},
+year = {2022},
+issn = {0957-4174},
+doi = {https://doi.org/10.1016/j.eswa.2022.118264},
+url = {https://www.sciencedirect.com/science/article/pii/S0957417422014051},
+author = {Shiyu Chen and Yawen Zeng and Da Cao and Shaofei Lu},
+keywords = {Machine translation, Visual relationship, Transformer, Graph convolutional network},
+abstract = {Video-guided machine translation is a promising task which aims to translate a source language description into a target language utilizing the video information as supplementary context. The majority of existing work utilize the whole video as the auxiliary information to enhance the translation performance. However, visual information, as a heterogeneous modal with text, introduces noise instead. Toward this end, we propose a novel visual relationship-enhanced transformer by constructing a semantic-visual relational graph as a corss-modal bridge. Specifically, the visual information is regarded as the structured conceptual representation, which builds a bridge between two modalities. Thereafter, graph convolutional network is deployed to capture the relationship among visual semantics. In this way, a transformer with structured multi-modal fusion strategy is allowed to explore the correlations. Finally, the proposed framework is optimized under the scheme of Kullback–Leibler divergence with label smoothing. Extensive experiments demonstrate the rationality and effectiveness of our proposed method as compared to other state-of-the-art solutions.}
+}
+```
+
 
 >研究生的主要研究成果都在这儿了，毕业快乐！不过该展示平台还是会慢慢更新的，毕竟是头秃的见证，不能白秃~
