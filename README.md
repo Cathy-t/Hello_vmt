@@ -20,7 +20,8 @@ You can download the model and the feature of [MSVD-Turkish Dataset](https://huc
 - https://github.com/kirbiyik/caption-it
 - http://flask.pocoo.org/docs/1.0/deploying/
 - https://github.com/Cathy-t/HELLO_image
-- https://authors.elsevier.com/c/1eq-j3OAb95KRy
+- https://authors.elsevier.com/c/1eq-j3OAb95KRy (This link has expired)
+- https://authors.elsevier.com/c/1fX8I3PiGTLqPZ
 - https://d.wanfangdata.com.cn/patent/CN202110704424.6
 - https://d.wanfangdata.com.cn/patent/CN202110395391.1
 
